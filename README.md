@@ -117,27 +117,3 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
   <br>
 
-_________________________________________
-
-
-
-* `GET *` should return the `index.html` file.
-
-  * Application must be deployed to Heroku.
-
-
-### Deployment: 36%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-### Application Quality: 11%
-
-* Application console is free of errors.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-* The URL of the functional, deployed application.
-
