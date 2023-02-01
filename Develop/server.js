@@ -87,6 +87,6 @@ const readAndDeleteById = (id, file) => {
 };
 
 // Setup listener
-app.listen(PORT, function () {
+app.listen(process.env.PORT, function () {
     console.log('App listening on PORT: ' + PORT);
 });
