@@ -26,7 +26,7 @@ app.get('/notes', (req, res) =>
 );
 
 // Setup the /api/notes post route
-app.post('/api/notes', function (req, res) {
+app.post('/api/notes', (req, res) => {
     console.info('POST /api/notes');
     // Receives a new note, adds it to db.json, then returns the new note
     let body = req.body;
@@ -36,7 +36,7 @@ app.post('/api/notes', function (req, res) {
 });
 
 // DELETE /api/notes/:id receives a query parameter containing the id of a note to delete, reads all notes from the db.json file, removes the note with the given id property, and then rewrites the notes to the db.json file.
-app.delete('/api/notes/:id', function (req, res) {
+app.delete('/api/notes/:id', (req, res) => {
     console.info('DELETE /api/notes');
     const id = req.params.id;
     readAndDeleteById(id, './db/db.json');
@@ -61,20 +61,18 @@ const readAndAppend = (content, file) => {
 };
 
 const readAndDeleteById = (id, file) => {
-    let success;
     fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
         } else {
-            let index;
+            let i;
             const parsedData = JSON.parse(data);
-            for (let i = 0; i < parsedData.length; i++) {
+            for (i = 0; i < parsedData.length; i++) {
                 if (parsedData[i].id === id) {
-                    index = i;
                     break;
                 }
             }
-            parsedData.splice(index, 1); // 2nd parameter means remove one item only
+            parsedData.splice(i, 1); // 2nd parameter means remove one item only
             let output = JSON.stringify(parsedData);
             fs.writeFile(file, output, (err) => {
                 if (err) {
@@ -83,10 +81,9 @@ const readAndDeleteById = (id, file) => {
             });
         }
     });
-    return success;
 };
 
 // Setup listener
-app.listen(process.env.PORT, function () {
+app.listen(PORT, function () {
     console.log('App listening on PORT: ' + PORT);
 });
