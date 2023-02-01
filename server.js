@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
-// Helper method for generating unique ids
+// for generating unique ids
 const uuid = require('uuid');
 // Initialize express app
 const app = express();
