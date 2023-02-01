@@ -13,9 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-
-
-// On the back end, the application should include a db.json file that will be used to store and retrieve notes using the fs module.
+// a db.json file will be used to store and retrieve notes using the fs module.
 app.get('/api/notes', (req, res) => {
     console.info('GET /api/notes');
     let notes = JSON.parse(fs.readFileSync('./db/db.json'));
@@ -24,10 +22,9 @@ app.get('/api/notes', (req, res) => {
 
 // Display notes.html when /notes is accessed
 app.get('/notes', (req, res) =>
-res.sendFile(path.join(__dirname, './public/notes.html'))
+    res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
-// POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. 
 // Setup the /api/notes post route
 app.post('/api/notes', function (req, res) {
     console.info('POST /api/notes');
@@ -36,11 +33,9 @@ app.post('/api/notes', function (req, res) {
     body.id = uuid.v4();
     readAndAppend(body, './db/db.json');
     res.send('Successfully Wrote Item ' + body.id);
-
 });
-// DELETE /api/notes/:id should receive a query parameter containing the id of a note to delete. In order to delete a note,
-// you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the
-// notes to the db.json file.
+
+// DELETE /api/notes/:id receives a query parameter containing the id of a note to delete, reads all notes from the db.json file, removes the note with the given id property, and then rewrites the notes to the db.json file.
 app.delete('/api/notes/:id', function (req, res) {
     console.info('DELETE /api/notes');
     const id = req.params.id;
@@ -80,7 +75,6 @@ const readAndDeleteById = (id, file) => {
                 }
             }
             parsedData.splice(index, 1); // 2nd parameter means remove one item only
-
             let output = JSON.stringify(parsedData);
             fs.writeFile(file, output, (err) => {
                 if (err) {
@@ -96,4 +90,3 @@ const readAndDeleteById = (id, file) => {
 app.listen(PORT, function () {
     console.log('App listening on PORT: ' + PORT);
 });
-
