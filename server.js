@@ -59,7 +59,7 @@ const readAndAppend = (content, file) => {
         }
     });
 };
-
+// Function that looks id that matches the id of a note to delete; removes note, then splices array back together
 const readAndDeleteById = (id, file) => {
     fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
