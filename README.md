@@ -72,14 +72,13 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## 📸 Screenshot 
 ​<br>
-![](./Assets/11-express-homework-demo-01.png)
-![](./Assets/11-express-homework-demo-02.png)
+![](./public/assets/images/screenshot.png)
 ​
 <hr>
 <br>
 
 ## 🔗 Links 
-- Live URL: [https://averycaldwell.github.io/Note-Taker/](https://drive.google.https://averycaldwell.github.io/Note-Taker/)
+- Live URL: [https://avery-caldwell-note-taker.herokuapp.com/](https://avery-caldwell-note-taker.herokuapp.com/)
 
 
 <br>
@@ -96,6 +95,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 - CSS
 - Bootstrap
 - JavaScript
+- Node.js
 - Express
 
 <br>
