@@ -79,6 +79,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## 🔗 Links 
 - Live URL: [https://avery-caldwell-note-taker.herokuapp.com/](https://avery-caldwell-note-taker.herokuapp.com/)
+- GitHub Repo: [https://github.com/AveryCaldwell/Note-Taker](https://github.com/AveryCaldwell/Note-Taker)
+
 
 
 <br>
@@ -102,6 +104,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ### 📚 Useful resources
 
+- Express Methods: [https://expressjs.com/en/guide/routing.html#response-methods](https://expressjs.com/en/guide/routing.html#response-methods)
+- Heroku Install: [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
 - Emojis: [https://github.com/ikatyang/emoji-cheat-sheet#office](https://github.com/ikatyang/emoji-cheat-sheet#office)
 ​
 

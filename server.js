@@ -35,7 +35,7 @@ app.post('/api/notes', (req, res) => {
     res.send('Successfully Wrote Item ' + body.id);
 });
 
-// DELETE /api/notes/:id receives a query parameter containing the id of a note to delete, reads all notes from the db.json file, removes the note with the given id property, and then rewrites the notes to the db.json file.
+// Receives a query parameter containing the id of a note to delete, reads all notes from the db.json file, removes the note with the given id property, and then rewrites the notes to the db.json file.
 app.delete('/api/notes/:id', (req, res) => {
     console.info('DELETE /api/notes');
     const id = req.params.id;
